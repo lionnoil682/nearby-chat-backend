@@ -2,25 +2,18 @@
 ## WARNING! Do not upload this file! It contains important secret keys. Only use it in a local development environment!
 
 services:
-  # Service configuration for your application
   app:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    image: nest-lecture-dev:local # Names the built image
+    image: nest-lecture-dev:local
     ports:
-      - '3002:3002' # Maps the container port to the host
+      - '3002:3002'
       - '9229:9229'
     environment:
-      # Environment variables for the service
       NODE_ENV: development
       PORT: 3002
-      K_SERVICE: nest-lecture
-      K_REVISION: 0
-      K_CONFIGURATION: nest-lecture
-      CLOUDSQL_CONNECTION_NAME: winged-woods-442503-f1:asia-northeast3:codelab
+      CLOUDSQL_HOST: 34.64.248.193
       CLOUDSQL_USER: codelab
       CLOUDSQL_PASS: codelab1234
-      CLOUDSQL_HOST: 34.64.248.193
-      CLOUDSQL_PORT: 5432
       CLOUDSQL_DB: codelab-nest
