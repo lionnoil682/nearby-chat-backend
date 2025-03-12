@@ -18,5 +18,8 @@ RUN npm ci
 # Copy local code to the container image.
 COPY . ./
 
+# 포트 노출 (Cloud Run은 8080 포트 필요)
+EXPOSE 8080
+
 # Run the web service on container startup.
 ENTRYPOINT [ "npm", "run", "start:dev" ]
